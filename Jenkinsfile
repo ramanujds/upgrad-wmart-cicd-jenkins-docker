@@ -38,6 +38,19 @@ pipeline {
             }
         }
 
+        stage('Push Image to DockerHub'){
+            steps{
+                script{
+                    withCredentials([string(credentialsId: 'dockerhub_pdw', variable: 'dockerhub_pass')]) {
+                        sh 'docker login -u ram1uj -p ${dockerhub_pass}'
+                        sh 'docker push ram1uj/spring-boot-app-wmart'
+                        echo 'Push Image Success'
+                    }
+                }
+            }
+
+        }
+
         }
 
 
