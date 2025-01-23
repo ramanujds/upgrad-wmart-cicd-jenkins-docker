@@ -56,9 +56,7 @@ pipeline {
 
         post{
          success{
-            junit '**/target/surefire-reports/TEST-*.xml'
-            archiveArtifacts 'target/*.jar'
-            echo 'Build Complete'
+            echo 'Build Completed Successfully'
           }
         }
 
