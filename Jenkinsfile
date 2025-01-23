@@ -33,7 +33,7 @@ pipeline {
 
         stage('Build Docker Image'){
             steps{
-                sh "docker build -t ram1uj/spring-boot-app-wmart"
+                sh "docker build -t ram1uj/spring-boot-app-wmart ."
                 echo 'Docker Image Build Success'
             }
         }
